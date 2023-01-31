@@ -30,28 +30,28 @@ def svm():
 
 def dt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--depth', type=str, default="keras_lstm", help='depth')
-    parser.add_argument('--samples_split',type=str,default='分析数据.xls',help='samples_split')
+    parser.add_argument('--depth', type=int, default=10, help='depth')
+    parser.add_argument('--samples_split',type=int,default=2,help='samples_split')
     dt_args = parser.parse_args()
     return dt_args
 def rf():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--estimator', type=str, default="keras_lstm", help='estimator')
-    parser.add_argument('--sample',type=str,default='分析数据.xls',help='sample')
+    parser.add_argument('--estimator', type=int, default=100, help='estimator num')
+    parser.add_argument('--sample',type=int,default=1000,help='sample num')
     rf_args = parser.parse_args()
     return rf_args
 def gbdt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--estimator', type=str, default="keras_lstm", help='estimator')
-    parser.add_argument('--depth',type=str,default='分析数据.xls',help='depth')
-    parser.add_argument('--lr', type=str, default='分析数据.xls', help='lr')
+    parser.add_argument('--estimator', type=int, default=100, help='estimator num')
+    parser.add_argument('--depth',type=int,default=4,help='depth')
+    parser.add_argument('--lr', type=float, default=1, help='lr')
     gbdt_args = parser.parse_args()
     return gbdt_args
 
 def xgboost():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--estimator', type=str, default="keras_lstm", help='estimator')
-    parser.add_argument('--depth', type=str, default='分析数据.xls', help='depth')
-    parser.add_argument('--sample_b', type=str, default='分析数据.xls', help='sample_b')
+    parser.add_argument('--estimator', type=int, default=100, help='estimator num')
+    parser.add_argument('--depth',type=int,default=4,help='depth')
+    parser.add_argument('--sample_b', type=float, default=0.6, help='sample_b')
     xgboost_args = parser.parse_args()
     return xgboost_args
